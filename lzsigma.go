@@ -29,15 +29,19 @@ type Rule struct {
 }
 
 type SigmaRule struct {
-	Source string
+	source string
+}
+
+func (sr *SigmaRule) SetSource(source string) {
+	sr.source = source
 }
 
 func (sr *SigmaRule) content() []byte {
 
-	data, err := http.Get(sr.Source)
+	data, err := http.Get(sr.source)
 	if err != nil {
 
-		f, err := os.Open(sr.Source)
+		f, err := os.Open(sr.source)
 		if err != nil {
 			panic(err)
 		}
