@@ -1,4 +1,4 @@
-module github.com/nopfault/lz-sigma
+module github.com/nopfault/lzsigma
 
 go 1.20
 
